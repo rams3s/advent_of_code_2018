@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <array>
 #include <cassert>
+#include <fstream>
 #include <functional>
 #include <iomanip>
 #include <iostream>
@@ -19,15 +20,15 @@
 
 int main()
 {
-    using type_t = int;
+    std::string filename { "../dayX/input.txt" };
+    std::ifstream fs { filename };
 
-    std::ios_base::sync_with_stdio( false );
-    std::cin.tie( nullptr );
+    using type_t = int;
 
     std::string line;
     std::vector<type_t> v;
 
-    while ( std::getline( std::cin, line ) )
+    while ( std::getline( fs, line ) )
     {
         std::istringstream line_ss{ line };
         std::string token;
