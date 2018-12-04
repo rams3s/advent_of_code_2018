@@ -5,3 +5,4 @@ set(CMAKE_CXX_FLAGS "-Weverything -Werror -Wno-c++98-compat-pedantic -Wno-c++98-
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 
 add_executable(day1 day1/main.cpp)
+add_executable(day2 day2/main.cpp)
