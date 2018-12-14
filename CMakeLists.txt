@@ -1,8 +1,14 @@
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.10)
 
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_FLAGS "-Weverything -Werror -Wno-c++98-compat-pedantic -Wno-c++98-compat -Wno-missing-prototypes -Wno-unused-macros ${CMAKE_CXX_FLAGS}")
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
+
+if(MSVC)
+    string (REGEX REPLACE "/W[0-4]" "" CMAKE_CXX_FLAGS_INIT "${CMAKE_CXX_FLAGS_INIT}")
+    add_compile_options(/W4 /WX)
+else(MSVC)
+    add_compile_options(-Wall -Werror -Wno-c++98-compat-pedantic -Wno-c++98-compat -Wno-missing-prototypes -Wno-unused-macros)
+endif(MSVC)
 
 add_executable(day1 day1/main.cpp)
 add_executable(day2 day2/main.cpp)
