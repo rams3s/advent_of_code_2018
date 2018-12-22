@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <array>
 #include <cassert>
+#include <dequeue>
 #include <fstream>
 #include <functional>
 #include <iomanip>
@@ -9,9 +10,11 @@
 #include <memory>
 #include <limits>
 #include <numeric>
+#include <queue>
 #include <regex>
 #include <set>
 #include <sstream>
+#include <stack>
 #include <string>
 #include <unordered_map>
 #include <unordered_set>
